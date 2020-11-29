@@ -4,8 +4,15 @@ import { Grid, Text, Collapse } from "@geist-ui/react";
 const FAQ = () => {
   return (
     <Grid xs={24} md={24} lg={24} style={{ padding: "0 5% 3%" }}>
-      <Grid xs={24} md={24} lg={24}>
-        <Text h3>Frequently asked questions</Text>
+      <Grid xs={24} md={24} lg={24} alignItems="center">
+        <Text h3>
+          <img
+            src="https://www.flaticon.com/svg/static/icons/svg/1479/1479648.svg"
+            style={{ width: "30px", marginRight: "10px" }}
+            alt="icon"
+          />
+          Frequently asked questions
+        </Text>
       </Grid>
       <Grid xs={24} md={24} lg={24}>
         <Collapse title="Where do the stats come from?" shadow>
