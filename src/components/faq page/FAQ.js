@@ -17,7 +17,8 @@ const FAQ = () => {
       <Grid xs={24} md={24} lg={24}>
         <Collapse title="Where do the stats come from?" shadow>
           <Text>
-            The stats come from an open source REST API owned by balldontlie.io
+            The stats come from an open source REST API created and maintained
+            by balldontlie.io
           </Text>
         </Collapse>
         <Collapse title="Is this data legit?" shadow>

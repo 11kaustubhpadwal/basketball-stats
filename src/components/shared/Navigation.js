@@ -5,15 +5,15 @@ import Logo from "../../images/basketball-ball.svg";
 const Navigation = () => {
   return (
     <Fragment>
-      <Grid xs={24} md={12} lg={2}>
+      <Grid xs={4} md={2} lg={2} style={{ textAlign: "right" }}>
         <img src={Logo} alt="Logo" style={{ width: "5rem" }} />
       </Grid>
-      <Grid xs={24} md={12} lg={18}>
+      <Grid xs={20} md={15} lg={16}>
         <Text h1 i>
           Basketball Stats
         </Text>
       </Grid>
-      <Grid xs={24} md={12} lg={2}>
+      <Grid md={4} lg={3} style={{ textAlign: "right" }}>
         <Link href="/">
           <Text h4>
             <img
@@ -25,7 +25,7 @@ const Navigation = () => {
           </Text>
         </Link>
       </Grid>
-      <Grid xs={24} md={12} lg={2}>
+      <Grid xs={24} md={3} lg={3}>
         <Link href="faq">
           <Text h4>
             <img

@@ -3,7 +3,7 @@ import { Grid, Text, Card, Divider } from "@geist-ui/react";
 
 const PlayerInfo = () => {
   return (
-    <Grid xs={24} md={12} lg={6}>
+    <Grid xs={24} md={12} lg={6} style={{ padding: "3% 1.5%" }}>
       <Card hoverable shadow>
         <Card.Content>
           <Text b>Player Name</Text>

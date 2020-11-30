@@ -3,7 +3,7 @@ import { Grid, Text, Card, Image, Divider } from "@geist-ui/react";
 
 const TeamInfo = () => {
   return (
-    <Grid xs={24} md={8} lg={6}>
+    <Grid xs={24} md={12} lg={6} style={{ padding: "3% 1.5%" }}>
       <Card hoverable shadow>
         <Image
           src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png"

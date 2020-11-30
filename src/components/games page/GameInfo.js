@@ -3,7 +3,7 @@ import { Grid, Text, Card } from "@geist-ui/react";
 
 const GameInfo = () => {
   return (
-    <Grid xs={24} md={8} lg={6}>
+    <Grid xs={24} md={12} lg={6} style={{ padding: "3% 1.5%" }}>
       <Card hoverable shadow>
         <Text h4 style={{ marginBottom: "0" }}>
           Season, Status
