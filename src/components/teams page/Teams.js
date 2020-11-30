@@ -21,6 +21,48 @@ function Teams() {
         <TeamInfo />
         <TeamInfo />
       </Grid.Container>
+      <Grid.Container xs={24} md={24} lg={24} gap="4" style={{ padding: "2%" }}>
+        <TeamInfo />
+        <TeamInfo />
+        <TeamInfo />
+        <TeamInfo />
+      </Grid.Container>
+      <Grid.Container xs={24} md={24} lg={24} gap="4" style={{ padding: "2%" }}>
+        <TeamInfo />
+        <TeamInfo />
+        <TeamInfo />
+        <TeamInfo />
+      </Grid.Container>
+      <Grid.Container xs={24} md={24} lg={24} gap="4" style={{ padding: "2%" }}>
+        <TeamInfo />
+        <TeamInfo />
+        <TeamInfo />
+        <TeamInfo />
+      </Grid.Container>
+      <Grid.Container xs={24} md={24} lg={24} gap="4" style={{ padding: "2%" }}>
+        <TeamInfo />
+        <TeamInfo />
+        <TeamInfo />
+        <TeamInfo />
+      </Grid.Container>
+      <Grid.Container xs={24} md={24} lg={24} gap="4" style={{ padding: "2%" }}>
+        <TeamInfo />
+        <TeamInfo />
+        <TeamInfo />
+        <TeamInfo />
+      </Grid.Container>
+      <Grid.Container xs={24} md={24} lg={24} gap="4" style={{ padding: "2%" }}>
+        <TeamInfo />
+        <TeamInfo />
+        <TeamInfo />
+        <TeamInfo />
+      </Grid.Container>
+      <Grid.Container xs={24} md={24} lg={24} gap="4" style={{ padding: "2%" }}>
+        <TeamInfo />
+        <TeamInfo />
+        <TeamInfo />
+        <TeamInfo />
+      </Grid.Container>
     </Grid>
   );
 }

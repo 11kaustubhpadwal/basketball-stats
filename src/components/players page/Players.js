@@ -26,7 +26,79 @@ const Players = () => {
         md={24}
         lg={24}
         gap="4"
-        style={{ padding: "4% 2%" }}
+        style={{ padding: "3% 2% 0" }}
+      >
+        <PlayerInfo />
+        <PlayerInfo />
+        <PlayerInfo />
+        <PlayerInfo />
+      </Grid.Container>
+      <Grid.Container
+        xs={24}
+        md={24}
+        lg={24}
+        gap="4"
+        style={{ padding: "3% 2% 0" }}
+      >
+        <PlayerInfo />
+        <PlayerInfo />
+        <PlayerInfo />
+        <PlayerInfo />
+      </Grid.Container>
+      <Grid.Container
+        xs={24}
+        md={24}
+        lg={24}
+        gap="4"
+        style={{ padding: "3% 2% 0" }}
+      >
+        <PlayerInfo />
+        <PlayerInfo />
+        <PlayerInfo />
+        <PlayerInfo />
+      </Grid.Container>
+      <Grid.Container
+        xs={24}
+        md={24}
+        lg={24}
+        gap="4"
+        style={{ padding: "3% 2% 0" }}
+      >
+        <PlayerInfo />
+        <PlayerInfo />
+        <PlayerInfo />
+        <PlayerInfo />
+      </Grid.Container>
+      <Grid.Container
+        xs={24}
+        md={24}
+        lg={24}
+        gap="4"
+        style={{ padding: "3% 2% 0" }}
+      >
+        <PlayerInfo />
+        <PlayerInfo />
+        <PlayerInfo />
+        <PlayerInfo />
+      </Grid.Container>
+      <Grid.Container
+        xs={24}
+        md={24}
+        lg={24}
+        gap="4"
+        style={{ padding: "3% 2% 0" }}
+      >
+        <PlayerInfo />
+        <PlayerInfo />
+        <PlayerInfo />
+        <PlayerInfo />
+      </Grid.Container>
+      <Grid.Container
+        xs={24}
+        md={24}
+        lg={24}
+        gap="4"
+        style={{ padding: "3% 2% 4%" }}
       >
         <PlayerInfo />
         <PlayerInfo />

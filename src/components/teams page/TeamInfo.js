@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Text, Card, Image } from "@geist-ui/react";
+import { Grid, Text, Card, Image, Divider } from "@geist-ui/react";
 
 const TeamInfo = () => {
   return (
@@ -12,20 +12,41 @@ const TeamInfo = () => {
         <Text h4 style={{ marginBottom: "0" }}>
           Team Name
         </Text>
-        <Text type="secondary" small>
-          Team Full Name
+        <Text type="secondary">Team Full Name</Text>
+        <Divider />
+        <Text p type="success">
+          <img
+            src="https://www.flaticon.com/svg/static/icons/svg/3815/3815707.svg"
+            style={{ width: "25px", marginRight: "10px" }}
+            alt="icon"
+          />
+          Conference
+        </Text>
+        <Text p type="warning">
+          <img
+            src="https://www.flaticon.com/svg/static/icons/svg/1738/1738435.svg"
+            style={{ width: "25px", marginRight: "10px" }}
+            alt="icon"
+          />
+          Division
+        </Text>
+        <Text p type="error">
+          <img
+            src="https://www.flaticon.com/svg/static/icons/svg/3080/3080856.svg"
+            style={{ width: "25px", marginRight: "10px" }}
+            alt="icon"
+          />
+          Abbreviation
         </Text>
         <Card.Footer>
-          <Text p type="success">
-            Conference
+          <Text p>
+            <img
+              src="https://www.flaticon.com/svg/static/icons/svg/269/269947.svg"
+              style={{ width: "25px", marginRight: "10px" }}
+              alt="icon"
+            />
+            City
           </Text>
-          <Text p type="warning">
-            Division
-          </Text>
-          <Text p type="error">
-            Abbreviation
-          </Text>
-          <Text p>City</Text>
         </Card.Footer>
       </Card>
     </Grid>

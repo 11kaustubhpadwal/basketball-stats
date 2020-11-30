@@ -15,12 +15,26 @@ const Navigation = () => {
       </Grid>
       <Grid xs={24} md={12} lg={2}>
         <Link href="/">
-          <Text h4>Home</Text>
+          <Text h4>
+            <img
+              src="https://www.flaticon.com/svg/static/icons/svg/201/201128.svg"
+              style={{ width: "25px", marginRight: "10px" }}
+              alt="icon"
+            />
+            Home
+          </Text>
         </Link>
       </Grid>
       <Grid xs={24} md={12} lg={2}>
         <Link href="faq">
-          <Text h4>FAQ</Text>
+          <Text h4>
+            <img
+              src="https://www.flaticon.com/svg/static/icons/svg/942/942802.svg"
+              style={{ width: "25px", marginRight: "10px" }}
+              alt="icon"
+            />
+            FAQ
+          </Text>
         </Link>
       </Grid>
     </Fragment>

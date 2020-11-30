@@ -22,7 +22,7 @@ const Home = () => {
           text="TEAMS"
         />
         <InfoCard
-          imgUrl="https://images3.alphacoders.com/914/914671.png"
+          imgUrl="https://initiate.alphacoders.com/images/914/cropped-1920-1080-914671.png?6632"
           linkUrl="/games"
           text="GAMES"
         />
