@@ -24,7 +24,11 @@ const TeamInfo = ({ team }) => {
           <img
             src={getLogo()}
             alt="Logo"
-            style={{ padding: "30px", maxHeight: "300px" }}
+            style={{
+              padding: "30px",
+              maxHeight: "300px",
+              objectFit: "contain",
+            }}
           ></img>
         </div>
         <Text h4 style={{ marginBottom: "0" }}>
