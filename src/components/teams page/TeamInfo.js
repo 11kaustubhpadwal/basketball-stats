@@ -1,15 +1,32 @@
 import React from "react";
-import { Grid, Text, Card, Image, Divider } from "@geist-ui/react";
+import { Grid, Text, Card, Divider } from "@geist-ui/react";
 import PropTypes from "prop-types";
+import { logos } from "../../utils/teamLogos";
 
 const TeamInfo = ({ team }) => {
+  const getLogo = () => {
+    for (let i = 0; i < logos.length; i++) {
+      if (
+        logos[i]
+          .slice(68, 90)
+          .replace(/_/g, " ")
+          .includes(team.name.toLowerCase())
+      ) {
+        return logos[i];
+      }
+    }
+  };
+
   return (
     <Grid xs={24} md={12} lg={6} style={{ padding: "3% 1.5%" }}>
       <Card hoverable shadow>
-        <Image
-          src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png"
-          style={{ objectFit: "cover" }}
-        />
+        <div style={{ height: "300px" }}>
+          <img
+            src={getLogo()}
+            alt="Logo"
+            style={{ padding: "30px", maxHeight: "300px" }}
+          ></img>
+        </div>
         <Text h4 style={{ marginBottom: "0" }}>
           {team.name}
         </Text>

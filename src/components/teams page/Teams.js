@@ -29,6 +29,11 @@ function Teams({ teams, getTeams }) {
       {!teams.loading && teams.error !== null && (
         <Grid xs={24} md={24} lg={24} style={{ margin: "0 1.5%" }}>
           <Text h3 type="error">
+            <img
+              src="https://www.flaticon.com/svg/static/icons/svg/645/645881.svg"
+              style={{ width: "30px", marginRight: "10px" }}
+              alt="icon"
+            />
             {teams.error}
           </Text>
         </Grid>
@@ -46,35 +51,51 @@ function Teams({ teams, getTeams }) {
       {/* Row 1 */}
       {teams.teams.data !== undefined &&
         teams.teams.data.length > 0 &&
-        teams.teams.data.slice(0, 3).map((team) => <TeamInfo team={team} />)}
+        teams.teams.data
+          .slice(0, 3)
+          .map((team, index) => <TeamInfo team={team} key={index} />)}
       {/* Row 2 */}
       {teams.teams.data !== undefined &&
         teams.teams.data.length > 0 &&
-        teams.teams.data.slice(4, 7).map((team) => <TeamInfo team={team} />)}
+        teams.teams.data
+          .slice(4, 7)
+          .map((team, index) => <TeamInfo team={team} key={index} />)}
       {/* Row 3 */}
       {teams.teams.data !== undefined &&
         teams.teams.data.length > 0 &&
-        teams.teams.data.slice(8, 11).map((team) => <TeamInfo team={team} />)}
+        teams.teams.data
+          .slice(8, 11)
+          .map((team, index) => <TeamInfo team={team} key={index} />)}
       {/* Row 4 */}
       {teams.teams.data !== undefined &&
         teams.teams.data.length > 0 &&
-        teams.teams.data.slice(12, 15).map((team) => <TeamInfo team={team} />)}
+        teams.teams.data
+          .slice(12, 15)
+          .map((team, index) => <TeamInfo team={team} key={index} />)}
       {/* Row 5 */}
       {teams.teams.data !== undefined &&
         teams.teams.data.length > 0 &&
-        teams.teams.data.slice(16, 19).map((team) => <TeamInfo team={team} />)}
+        teams.teams.data
+          .slice(16, 19)
+          .map((team, index) => <TeamInfo team={team} key={index} />)}
       {/* Row 6 */}
       {teams.teams.data !== undefined &&
         teams.teams.data.length > 0 &&
-        teams.teams.data.slice(20, 23).map((team) => <TeamInfo team={team} />)}
+        teams.teams.data
+          .slice(20, 23)
+          .map((team, index) => <TeamInfo team={team} key={index} />)}
       {/* Row 7 */}
       {teams.teams.data !== undefined &&
         teams.teams.data.length > 0 &&
-        teams.teams.data.slice(24, 27).map((team) => <TeamInfo team={team} />)}
+        teams.teams.data
+          .slice(24, 27)
+          .map((team, index) => <TeamInfo team={team} key={index} />)}
       {/* Row 8 */}
       {teams.teams.data !== undefined &&
         teams.teams.data.length > 0 &&
-        teams.teams.data.slice(28, 29).map((team) => <TeamInfo team={team} />)}
+        teams.teams.data
+          .slice(28, 29)
+          .map((team, index) => <TeamInfo team={team} key={index} />)}
     </Grid.Container>
   );
 }
