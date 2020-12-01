@@ -5,7 +5,7 @@ import { GET_TEAMS, GET_TEAMS_FAILED, GET_TEAMS_LOADING } from "./types";
 // Get all teams
 export const getTeams = () => {
   return async (dispatch) => {
-    dispatch(getTeamsLoading());
+    dispatch(teamsLoading());
 
     try {
       const response = await axios({
@@ -25,7 +25,7 @@ export const getTeams = () => {
 };
 
 // Loading to get teams
-export const getTeamsLoading = () => {
+export const teamsLoading = () => {
   return {
     type: GET_TEAMS_LOADING,
   };

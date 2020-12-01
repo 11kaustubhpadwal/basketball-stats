@@ -52,49 +52,49 @@ function Teams({ teams, getTeams }) {
       {teams.teams.data !== undefined &&
         teams.teams.data.length > 0 &&
         teams.teams.data
-          .slice(0, 3)
+          .slice(0, 4)
           .map((team, index) => <TeamInfo team={team} key={index} />)}
       {/* Row 2 */}
       {teams.teams.data !== undefined &&
         teams.teams.data.length > 0 &&
         teams.teams.data
-          .slice(4, 7)
+          .slice(4, 8)
           .map((team, index) => <TeamInfo team={team} key={index} />)}
       {/* Row 3 */}
       {teams.teams.data !== undefined &&
         teams.teams.data.length > 0 &&
         teams.teams.data
-          .slice(8, 11)
+          .slice(8, 12)
           .map((team, index) => <TeamInfo team={team} key={index} />)}
       {/* Row 4 */}
       {teams.teams.data !== undefined &&
         teams.teams.data.length > 0 &&
         teams.teams.data
-          .slice(12, 15)
+          .slice(12, 16)
           .map((team, index) => <TeamInfo team={team} key={index} />)}
       {/* Row 5 */}
       {teams.teams.data !== undefined &&
         teams.teams.data.length > 0 &&
         teams.teams.data
-          .slice(16, 19)
+          .slice(16, 20)
           .map((team, index) => <TeamInfo team={team} key={index} />)}
       {/* Row 6 */}
       {teams.teams.data !== undefined &&
         teams.teams.data.length > 0 &&
         teams.teams.data
-          .slice(20, 23)
+          .slice(20, 24)
           .map((team, index) => <TeamInfo team={team} key={index} />)}
       {/* Row 7 */}
       {teams.teams.data !== undefined &&
         teams.teams.data.length > 0 &&
         teams.teams.data
-          .slice(24, 27)
+          .slice(24, 28)
           .map((team, index) => <TeamInfo team={team} key={index} />)}
       {/* Row 8 */}
       {teams.teams.data !== undefined &&
         teams.teams.data.length > 0 &&
         teams.teams.data
-          .slice(28, 29)
+          .slice(28, 30)
           .map((team, index) => <TeamInfo team={team} key={index} />)}
     </Grid.Container>
   );
