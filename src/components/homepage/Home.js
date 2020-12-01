@@ -17,7 +17,7 @@ const Home = () => {
           text="PLAYERS"
         />
         <InfoCard
-          imgUrl="https://initiate.alphacoders.com/images/920/cropped-1920-1080-920833.jpg?7796"
+          imgUrl="https://wallpapercave.com/wp/wp5099028.jpg"
           linkUrl="/teams"
           text="TEAMS"
         />
