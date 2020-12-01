@@ -1,0 +1,3 @@
+export const GET_TEAMS = "GET_TEAMS";
+export const GET_TEAMS_FAILED = "GET_TEAMS_FAILED";
+export const GET_TEAMS_LOADING = "GET_TEAMS_LOADING";

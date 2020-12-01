@@ -1,7 +1,8 @@
 import React from "react";
 import { Grid, Text, Card, Image, Divider } from "@geist-ui/react";
+import PropTypes from "prop-types";
 
-const TeamInfo = () => {
+const TeamInfo = ({ team }) => {
   return (
     <Grid xs={24} md={12} lg={6} style={{ padding: "3% 1.5%" }}>
       <Card hoverable shadow>
@@ -10,9 +11,9 @@ const TeamInfo = () => {
           style={{ objectFit: "cover" }}
         />
         <Text h4 style={{ marginBottom: "0" }}>
-          Team Name
+          {team.name}
         </Text>
-        <Text type="secondary">Team Full Name</Text>
+        <Text type="secondary">{team.full_name}</Text>
         <Divider />
         <Text p type="success">
           <img
@@ -20,7 +21,7 @@ const TeamInfo = () => {
             style={{ width: "25px", marginRight: "10px" }}
             alt="icon"
           />
-          Conference
+          {team.conference}
         </Text>
         <Text p type="warning">
           <img
@@ -28,7 +29,7 @@ const TeamInfo = () => {
             style={{ width: "25px", marginRight: "10px" }}
             alt="icon"
           />
-          Division
+          {team.division}
         </Text>
         <Text p type="error">
           <img
@@ -36,7 +37,7 @@ const TeamInfo = () => {
             style={{ width: "25px", marginRight: "10px" }}
             alt="icon"
           />
-          Abbreviation
+          {team.abbreviation}
         </Text>
         <Card.Footer>
           <Text p>
@@ -45,12 +46,16 @@ const TeamInfo = () => {
               style={{ width: "25px", marginRight: "10px" }}
               alt="icon"
             />
-            City
+            {team.city}
           </Text>
         </Card.Footer>
       </Card>
     </Grid>
   );
+};
+
+TeamInfo.propTypes = {
+  team: PropTypes.object.isRequired,
 };
 
 export default TeamInfo;

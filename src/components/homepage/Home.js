@@ -12,17 +12,17 @@ const Home = () => {
       </Grid>
       <Grid.Container gap={4} style={{ padding: "40px 30px" }} justify="center">
         <InfoCard
-          imgUrl="https://images4.alphacoders.com/782/782680.jpg"
+          imgUrl="https://images.pexels.com/photos/5586480/pexels-photo-5586480.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
           linkUrl="/players"
           text="PLAYERS"
         />
         <InfoCard
-          imgUrl="https://wallpapercave.com/wp/wp5099028.jpg"
+          imgUrl="https://images.pexels.com/photos/2820900/pexels-photo-2820900.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
           linkUrl="/teams"
           text="TEAMS"
         />
         <InfoCard
-          imgUrl="https://initiate.alphacoders.com/images/914/cropped-1920-1080-914671.png?6632"
+          imgUrl="https://images.pexels.com/photos/3019018/pexels-photo-3019018.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
           linkUrl="/games"
           text="GAMES"
         />
