@@ -100,7 +100,8 @@ const Players = ({
               style={{ width: "30px", marginRight: "10px" }}
               alt="icon"
             />
-            No such player exists. Please search for another player.
+            No player named <span style={{ color: "black" }}>{userInput}</span>{" "}
+            found. Please search for another player.
           </Text>
         </Grid>
       )}

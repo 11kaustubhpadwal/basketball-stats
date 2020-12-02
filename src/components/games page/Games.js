@@ -95,7 +95,9 @@ const Games = ({ games, getGames, searchGame, gamesSearchPagination }) => {
               style={{ width: "30px", marginRight: "10px" }}
               alt="icon"
             />
-            No games found. Please search for another season.
+            No games found for the season{" "}
+            <span style={{ color: "black" }}>{userInput}</span>. Please search
+            for another season.
           </Text>
         </Grid>
       )}
