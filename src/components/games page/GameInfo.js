@@ -1,16 +1,17 @@
 import React from "react";
 import { Grid, Text, Card } from "@geist-ui/react";
+import moment from "moment";
 
-const GameInfo = () => {
+const GameInfo = ({ game }) => {
   return (
     <Grid xs={24} md={12} lg={6} style={{ padding: "3% 1.5%" }}>
       <Card hoverable shadow>
         <Text h4 style={{ marginBottom: "0" }}>
-          Season, Status
+          {game.season}, {game.status}
         </Text>
-        <Text p>Team Name 1 vs Team Name 2</Text>
+        <Text p>{`${game.home_team.name} vs ${game.visitor_team.name}`}</Text>
         <Text type="secondary" small>
-          Team 1 Abbreviation vs Team 2 Abbreviation
+          {`${game.home_team.abbreviation} vs ${game.visitor_team.abbreviation}`}
         </Text>
         <Text p type="success">
           <img
@@ -18,7 +19,7 @@ const GameInfo = () => {
             style={{ width: "25px", marginRight: "10px" }}
             alt="icon"
           />
-          Team 1 Score
+          {`${game.home_team.name} score - ${game.home_team_score}`}
         </Text>
         <Text p type="error">
           <img
@@ -26,7 +27,7 @@ const GameInfo = () => {
             style={{ width: "25px", marginRight: "10px" }}
             alt="icon"
           />
-          Team 2 Score
+          {`${game.visitor_team.name} score - ${game.visitor_team_score}`}
         </Text>
         <Card.Footer>
           <Text p>
@@ -35,7 +36,7 @@ const GameInfo = () => {
               style={{ width: "25px", marginRight: "10px" }}
               alt="icon"
             />
-            Date
+            {moment(game.date).format("dddd, MMMM Do YYYY")}
           </Text>
         </Card.Footer>
       </Card>
