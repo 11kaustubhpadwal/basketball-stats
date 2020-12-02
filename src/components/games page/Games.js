@@ -5,9 +5,9 @@ import Loading from "../shared/Loading";
 
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { getGames } from "../../actions/gameActions";
+import { getGames, searchGame } from "../../actions/gameActions";
 
-const Games = ({ games, getGames }) => {
+const Games = ({ games, getGames, searchGame }) => {
   const [currentPage, setCurrentPage] = useState(1);
 
   // Get all games info
@@ -15,6 +15,12 @@ const Games = ({ games, getGames }) => {
     getGames(currentPage);
     //eslint-disable-next-line
   }, [currentPage]);
+
+  const [userInput, setUserInput] = useState("");
+
+  const handleSearch = (e) => {
+    setUserInput(e.target.value);
+  };
 
   return (
     <Grid.Container xs={24} md={24} lg={24} style={{ padding: "0 5% 3%" }}>
@@ -30,8 +36,23 @@ const Games = ({ games, getGames }) => {
       </Grid>
       {!games.loading && games.error === null && (
         <Grid xs={24} md={24} lg={24} style={{ margin: "3% 1.5% 1.5%" }}>
-          <Input clearable placeholder="e.g. lakers" />
-          <Button type="secondary" ghost style={{ marginLeft: "20px" }}>
+          <Input
+            clearable
+            placeholder="e.g. 2018"
+            value={userInput}
+            onChange={handleSearch}
+            onClearClick={() => {
+              getGames(currentPage);
+            }}
+          />
+          <Button
+            type="secondary"
+            ghost
+            style={{ marginLeft: "20px" }}
+            onClick={() => {
+              searchGame(userInput);
+            }}
+          >
             Search
           </Button>
         </Grid>
@@ -56,6 +77,18 @@ const Games = ({ games, getGames }) => {
           style={{ margin: "1.5% 1.5% 0", textAlign: "center" }}
         >
           <Loading />
+        </Grid>
+      )}
+      {games.games.data !== undefined && games.games.data.length <= 0 && (
+        <Grid xs={24} md={24} lg={24} style={{ margin: "2% 1.5%" }}>
+          <Text h3 type="error">
+            <img
+              src="https://www.flaticon.com/svg/static/icons/svg/645/645881.svg"
+              style={{ width: "30px", marginRight: "10px" }}
+              alt="icon"
+            />
+            No games found. Please search for another season.
+          </Text>
         </Grid>
       )}
       {/* Row 1 */}
@@ -122,10 +155,11 @@ const Games = ({ games, getGames }) => {
 Games.propTypes = {
   games: PropTypes.object.isRequired,
   getGames: PropTypes.func.isRequired,
+  searchGame: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   games: state.games,
 });
 
-export default connect(mapStateToProps, { getGames })(Games);
+export default connect(mapStateToProps, { getGames, searchGame })(Games);
