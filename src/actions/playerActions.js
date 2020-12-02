@@ -53,6 +53,28 @@ export const searchPlayer = (userInput) => {
   };
 };
 
+// Players search pagination
+export const playersSearchPagination = (pageNumber, userInput) => {
+  return async (dispatch) => {
+    dispatch(playersLoading());
+
+    try {
+      const response = await axios({
+        method: "get",
+        url: `https://www.balldontlie.io/api/v1/players?search=${userInput}&page=${pageNumber}`,
+      });
+
+      dispatch({ type: GET_PLAYERS, payload: response.data });
+    } catch (error) {
+      dispatch({
+        type: GET_PLAYERS_FAILED,
+        payload:
+          "Failed to get all players. Please refresh the page and try again.",
+      });
+    }
+  };
+};
+
 // Loading to get players
 export const playersLoading = () => {
   return {

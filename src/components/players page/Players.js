@@ -5,18 +5,31 @@ import Loading from "../shared/Loading";
 
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { getPlayers, searchPlayer } from "../../actions/playerActions";
+import {
+  getPlayers,
+  searchPlayer,
+  playersSearchPagination,
+} from "../../actions/playerActions";
 
-const Players = ({ players, getPlayers, searchPlayer }) => {
+const Players = ({
+  players,
+  getPlayers,
+  searchPlayer,
+  playersSearchPagination,
+}) => {
   const [currentPage, setCurrentPage] = useState(1);
+
+  const [userInput, setUserInput] = useState("");
 
   // Get all players info
   useEffect(() => {
-    getPlayers(currentPage);
+    if (userInput !== "") {
+      playersSearchPagination(currentPage, userInput);
+    } else {
+      getPlayers(currentPage);
+    }
     //eslint-disable-next-line
   }, [currentPage]);
-
-  const [userInput, setUserInput] = useState("");
 
   const handleSearch = (e) => {
     setUserInput(e.target.value);
@@ -156,10 +169,15 @@ Players.propTypes = {
   players: PropTypes.object.isRequired,
   getPlayers: PropTypes.func.isRequired,
   searchPlayer: PropTypes.func.isRequired,
+  playersSearchPagination: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   players: state.players,
 });
 
-export default connect(mapStateToProps, { getPlayers, searchPlayer })(Players);
+export default connect(mapStateToProps, {
+  getPlayers,
+  searchPlayer,
+  playersSearchPagination,
+})(Players);
