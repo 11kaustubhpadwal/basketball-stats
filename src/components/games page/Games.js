@@ -5,18 +5,26 @@ import Loading from "../shared/Loading";
 
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { getGames, searchGame } from "../../actions/gameActions";
+import {
+  getGames,
+  searchGame,
+  gamesSearchPagination,
+} from "../../actions/gameActions";
 
-const Games = ({ games, getGames, searchGame }) => {
+const Games = ({ games, getGames, searchGame, gamesSearchPagination }) => {
   const [currentPage, setCurrentPage] = useState(1);
+
+  const [userInput, setUserInput] = useState("");
 
   // Get all games info
   useEffect(() => {
-    getGames(currentPage);
+    if (userInput !== "") {
+      gamesSearchPagination(currentPage, userInput);
+    } else {
+      getGames(currentPage);
+    }
     //eslint-disable-next-line
   }, [currentPage]);
-
-  const [userInput, setUserInput] = useState("");
 
   const handleSearch = (e) => {
     setUserInput(e.target.value);
@@ -156,10 +164,15 @@ Games.propTypes = {
   games: PropTypes.object.isRequired,
   getGames: PropTypes.func.isRequired,
   searchGame: PropTypes.func.isRequired,
+  gamesSearchPagination: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   games: state.games,
 });
 
-export default connect(mapStateToProps, { getGames, searchGame })(Games);
+export default connect(mapStateToProps, {
+  getGames,
+  searchGame,
+  gamesSearchPagination,
+})(Games);

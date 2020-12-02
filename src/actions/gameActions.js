@@ -31,6 +31,28 @@ export const getGames = (pageNumber) => {
   };
 };
 
+// Games search pagination
+export const gamesSearchPagination = (pageNumber, userInput) => {
+  return async (dispatch) => {
+    dispatch(gamesLoading());
+
+    try {
+      const response = await axios({
+        method: "get",
+        url: `https://www.balldontlie.io/api/v1/games?seasons[]=${userInput}&page=${pageNumber}`,
+      });
+
+      dispatch({ type: GET_GAMES, payload: response.data });
+    } catch (error) {
+      dispatch({
+        type: GET_GAMES_FAILED,
+        payload:
+          "Failed to get all games. Please refresh the page and try again.",
+      });
+    }
+  };
+};
+
 // Search for a game
 export const searchGame = (season) => {
   return async (dispatch) => {
