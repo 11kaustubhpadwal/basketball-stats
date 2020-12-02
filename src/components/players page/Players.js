@@ -5,9 +5,9 @@ import Loading from "../shared/Loading";
 
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { getPlayers } from "../../actions/playerActions";
+import { getPlayers, searchPlayer } from "../../actions/playerActions";
 
-const Players = ({ players, getPlayers }) => {
+const Players = ({ players, getPlayers, searchPlayer }) => {
   const [currentPage, setCurrentPage] = useState(1);
 
   // Get all players info
@@ -15,6 +15,12 @@ const Players = ({ players, getPlayers }) => {
     getPlayers(currentPage);
     //eslint-disable-next-line
   }, [currentPage]);
+
+  const [userInput, setUserInput] = useState("");
+
+  const handleSearch = (e) => {
+    setUserInput(e.target.value);
+  };
 
   return (
     <Grid.Container xs={24} md={24} lg={24} style={{ padding: "0 5% 3%" }}>
@@ -30,14 +36,29 @@ const Players = ({ players, getPlayers }) => {
       </Grid>
       {!players.loading && players.error === null && (
         <Grid xs={24} md={24} lg={24} style={{ margin: "3% 1.5% 1.5%" }}>
-          <Input clearable placeholder="e.g. lebron james" />
-          <Button type="secondary" ghost style={{ marginLeft: "20px" }}>
+          <Input
+            clearable
+            placeholder="e.g. lebron james"
+            value={userInput}
+            onChange={handleSearch}
+            onClearClick={() => {
+              getPlayers(currentPage);
+            }}
+          />
+          <Button
+            type="secondary"
+            ghost
+            style={{ marginLeft: "20px" }}
+            onClick={() => {
+              searchPlayer(userInput);
+            }}
+          >
             Search
           </Button>
         </Grid>
       )}
       {!players.loading && players.error !== null && (
-        <Grid xs={24} md={24} lg={24} style={{ margin: "0 1.5%" }}>
+        <Grid xs={24} md={24} lg={24} style={{ margin: "2% 1.5%" }}>
           <Text h3 type="error">
             <img
               src="https://www.flaticon.com/svg/static/icons/svg/645/645881.svg"
@@ -56,6 +77,18 @@ const Players = ({ players, getPlayers }) => {
           style={{ margin: "1.5% 1.5% 0", textAlign: "center" }}
         >
           <Loading />
+        </Grid>
+      )}
+      {players.players.data !== undefined && players.players.data.length <= 0 && (
+        <Grid xs={24} md={24} lg={24} style={{ margin: "2% 1.5%" }}>
+          <Text h3 type="error">
+            <img
+              src="https://www.flaticon.com/svg/static/icons/svg/645/645881.svg"
+              style={{ width: "30px", marginRight: "10px" }}
+              alt="icon"
+            />
+            No such player exists. Please search for another player.
+          </Text>
         </Grid>
       )}
       {/* Row 1 */}
@@ -122,10 +155,11 @@ const Players = ({ players, getPlayers }) => {
 Players.propTypes = {
   players: PropTypes.object.isRequired,
   getPlayers: PropTypes.func.isRequired,
+  searchPlayer: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   players: state.players,
 });
 
-export default connect(mapStateToProps, { getPlayers })(Players);
+export default connect(mapStateToProps, { getPlayers, searchPlayer })(Players);

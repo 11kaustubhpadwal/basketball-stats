@@ -2,6 +2,9 @@ import {
   GET_PLAYERS,
   GET_PLAYERS_FAILED,
   GET_PLAYERS_LOADING,
+  SEARCH_PLAYER,
+  SEARCH_PLAYER_FAILED,
+  SEARCH_PLAYER_LOADING,
 } from "../actions/types";
 
 const initialState = {
@@ -13,7 +16,8 @@ const initialState = {
 // eslint-disable-next-line
 export default (state = initialState, action) => {
   switch (action.type) {
-    case GET_PLAYERS: {
+    case GET_PLAYERS:
+    case SEARCH_PLAYER: {
       return {
         ...state,
         players: action.payload,
@@ -21,7 +25,8 @@ export default (state = initialState, action) => {
         loading: false,
       };
     }
-    case GET_PLAYERS_FAILED: {
+    case GET_PLAYERS_FAILED:
+    case SEARCH_PLAYER_FAILED: {
       return {
         ...state,
         players: [],
@@ -29,7 +34,8 @@ export default (state = initialState, action) => {
         loading: false,
       };
     }
-    case GET_PLAYERS_LOADING: {
+    case GET_PLAYERS_LOADING:
+    case SEARCH_PLAYER_LOADING: {
       return {
         ...state,
         players: [],
