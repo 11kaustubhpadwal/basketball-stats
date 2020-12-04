@@ -1,7 +1,15 @@
-import React from "react";
-import { Grid, Text, Card, Divider } from "@geist-ui/react";
+import React, { useState } from "react";
+import { Grid, Text, Card, Divider, Button } from "@geist-ui/react";
+import PlayerStats from "./PlayerStats";
 
 const PlayerInfo = ({ player }) => {
+  const [state, setState] = useState(false);
+  const handler = () => setState(true);
+
+  const closeHandler = () => {
+    setState(false);
+  };
+
   return (
     <Grid xs={24} md={12} lg={6} style={{ padding: "3% 1.5%" }}>
       <Card hoverable shadow>
@@ -35,6 +43,17 @@ const PlayerInfo = ({ player }) => {
             {player.team.city}
           </Text>
         </Card.Content>
+        <Card.Footer>
+          <Button style={{ width: "100%" }} type="secondary" onClick={handler}>
+            Show Stats
+          </Button>
+          <PlayerStats
+            state={state}
+            handler={handler}
+            closeHandler={closeHandler}
+            setState={setState}
+          />
+        </Card.Footer>
       </Card>
     </Grid>
   );
