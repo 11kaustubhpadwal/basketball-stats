@@ -4,6 +4,9 @@ import {
   GET_PLAYERS,
   GET_PLAYERS_FAILED,
   GET_PLAYERS_LOADING,
+  GET_PLAYER_STATS,
+  GET_PLAYER_STATS_FAILED,
+  GET_PLAYER_STATS_LOADING,
   SEARCH_PLAYER,
   SEARCH_PLAYER_FAILED,
   SEARCH_PLAYER_LOADING,
@@ -75,6 +78,30 @@ export const playersSearchPagination = (pageNumber, userInput) => {
   };
 };
 
+// Get a player's stats for all seasons
+export const getPlayerStats = (playerId) => {
+  return async (dispatch) => {
+    dispatch(getPlayerStatsLoading());
+
+    try {
+      const response = await axios({
+        method: "get",
+        url: `https://www.balldontlie.io/api/v1/stats?player_ids[]=${playerId}`,
+      });
+
+      dispatch({ type: GET_PLAYER_STATS, payload: response.data });
+
+      console.log(response.data);
+    } catch (error) {
+      dispatch({
+        type: GET_PLAYER_STATS_FAILED,
+        payload:
+          "Failed to get the stats. Please refresh the page and try again.",
+      });
+    }
+  };
+};
+
 // Loading to get players
 export const playersLoading = () => {
   return {
@@ -86,5 +113,12 @@ export const playersLoading = () => {
 export const searchPlayerLoading = () => {
   return {
     type: SEARCH_PLAYER_LOADING,
+  };
+};
+
+// Loading to get player stats
+export const getPlayerStatsLoading = () => {
+  return {
+    type: GET_PLAYER_STATS_LOADING,
   };
 };

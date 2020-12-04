@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Grid, Text, Card, Divider, Button } from "@geist-ui/react";
 import PlayerStats from "./PlayerStats";
 
-const PlayerInfo = ({ player }) => {
+const PlayerInfo = ({ player, getPlayerStats, players }) => {
   const [state, setState] = useState(false);
   const handler = () => setState(true);
 
@@ -47,12 +47,17 @@ const PlayerInfo = ({ player }) => {
           <Button style={{ width: "100%" }} type="secondary" onClick={handler}>
             Show Stats
           </Button>
-          <PlayerStats
-            state={state}
-            handler={handler}
-            closeHandler={closeHandler}
-            setState={setState}
-          />
+          {state && (
+            <PlayerStats
+              state={state}
+              handler={handler}
+              closeHandler={closeHandler}
+              setState={setState}
+              getPlayerStats={getPlayerStats}
+              playerId={player.id}
+              players={players}
+            />
+          )}
         </Card.Footer>
       </Card>
     </Grid>

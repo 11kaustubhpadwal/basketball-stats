@@ -9,6 +9,7 @@ import {
   getPlayers,
   searchPlayer,
   playersSearchPagination,
+  getPlayerStats,
 } from "../../actions/playerActions";
 
 const Players = ({
@@ -16,6 +17,7 @@ const Players = ({
   getPlayers,
   searchPlayer,
   playersSearchPagination,
+  getPlayerStats,
 }) => {
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -110,43 +112,92 @@ const Players = ({
         players.players.data.length > 0 &&
         players.players.data
           .slice(0, 4)
-          .map((player, index) => <PlayerInfo player={player} key={index} />)}
+          .map((player, index) => (
+            <PlayerInfo
+              player={player}
+              key={index}
+              getPlayerStats={getPlayerStats}
+              players={players}
+            />
+          ))}
       {/* Row 2 */}
       {players.players.data !== undefined &&
         players.players.data.length > 0 &&
         players.players.data
           .slice(4, 8)
-          .map((player, index) => <PlayerInfo player={player} key={index} />)}
+          .map((player, index) => (
+            <PlayerInfo
+              player={player}
+              key={index}
+              getPlayerStats={getPlayerStats}
+              players={players}
+            />
+          ))}
       {/* Row 3 */}
       {players.players.data !== undefined &&
         players.players.data.length > 0 &&
         players.players.data
           .slice(8, 12)
-          .map((player, index) => <PlayerInfo player={player} key={index} />)}
+          .map((player, index) => (
+            <PlayerInfo
+              player={player}
+              key={index}
+              getPlayerStats={getPlayerStats}
+              players={players}
+            />
+          ))}
       {/* Row 4 */}
       {players.players.data !== undefined &&
         players.players.data.length > 0 &&
         players.players.data
           .slice(12, 16)
-          .map((player, index) => <PlayerInfo player={player} key={index} />)}
+          .map((player, index) => (
+            <PlayerInfo
+              player={player}
+              key={index}
+              getPlayerStats={getPlayerStats}
+              players={players}
+            />
+          ))}
       {/* Row 5 */}
       {players.players.data !== undefined &&
         players.players.data.length > 0 &&
         players.players.data
           .slice(16, 20)
-          .map((player, index) => <PlayerInfo player={player} key={index} />)}
+          .map((player, index) => (
+            <PlayerInfo
+              player={player}
+              key={index}
+              getPlayerStats={getPlayerStats}
+              players={players}
+            />
+          ))}
       {/* Row 6 */}
       {players.players.data !== undefined &&
         players.players.data.length > 0 &&
         players.players.data
           .slice(20, 24)
-          .map((player, index) => <PlayerInfo player={player} key={index} />)}
+          .map((player, index) => (
+            <PlayerInfo
+              player={player}
+              key={index}
+              getPlayerStats={getPlayerStats}
+              players={players}
+            />
+          ))}
       {/* Row 7 */}
       {players.players.data !== undefined &&
         players.players.data.length > 0 &&
         players.players.data
           .slice(24, 25)
-          .map((player, index) => <PlayerInfo player={player} key={index} />)}
+          .map((player, index) => (
+            <PlayerInfo
+              player={player}
+              key={index}
+              getPlayerStats={getPlayerStats}
+              players={players}
+            />
+          ))}
       {players.players.data !== undefined &&
         players.players.meta !== undefined &&
         players.players.data.length > 0 && (
@@ -171,6 +222,7 @@ Players.propTypes = {
   getPlayers: PropTypes.func.isRequired,
   searchPlayer: PropTypes.func.isRequired,
   playersSearchPagination: PropTypes.func.isRequired,
+  getPlayerStats: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
@@ -181,4 +233,5 @@ export default connect(mapStateToProps, {
   getPlayers,
   searchPlayer,
   playersSearchPagination,
+  getPlayerStats,
 })(Players);
