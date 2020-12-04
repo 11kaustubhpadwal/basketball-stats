@@ -31,7 +31,13 @@ const PlayerStats = ({
           <p>Total games played : {stats.meta.total_count}</p>
         </Modal.Content>
       )}
-      <Modal.Action passive onClick={() => setState(false)}>
+      <Modal.Action
+        passive
+        onClick={() => {
+          setState(false);
+          window.location.reload();
+        }}
+      >
         Back
       </Modal.Action>
     </Modal>
