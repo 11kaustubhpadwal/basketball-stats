@@ -84,14 +84,19 @@ export const getPlayerStats = (playerId) => {
     dispatch(getPlayerStatsLoading());
 
     try {
-      const response = await axios({
+      const response1 = await axios({
         method: "get",
         url: `https://www.balldontlie.io/api/v1/stats?player_ids[]=${playerId}`,
       });
 
-      dispatch({ type: GET_PLAYER_STATS, payload: response.data });
+      const response2 = await axios({
+        method: "get",
+        url: `https://www.balldontlie.io/api/v1/season_averages?season=2018&player_ids[]=${playerId}`,
+      });
 
-      console.log(response.data);
+      const response = { response1: response1.data, response2: response2.data };
+
+      dispatch({ type: GET_PLAYER_STATS, payload: response });
     } catch (error) {
       dispatch({
         type: GET_PLAYER_STATS_FAILED,
