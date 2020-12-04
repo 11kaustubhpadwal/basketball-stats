@@ -32,25 +32,25 @@ const PlayerStats = ({
           <strong>Average stats for 2018 season : </strong>
           <p>
             Points :{" "}
-            {stats.response2.data[0].pts !== undefined
+            {stats.response2.data[0] !== undefined
               ? stats.response2.data[0].pts
               : "N/A"}
           </p>
           <p>
             Offensive rebounds :{" "}
-            {stats.response2.data[0].oreb !== undefined
+            {stats.response2.data[0] !== undefined
               ? stats.response2.data[0].oreb
               : "N/A"}
           </p>
           <p>
             Defensive rebounds :{" "}
-            {stats.response2.data[0].dreb !== undefined
+            {stats.response2.data[0] !== undefined
               ? stats.response2.data[0].dreb
               : "N/A"}
           </p>
           <p>
             Turnover :{" "}
-            {stats.response2.data[0].turnover !== undefined
+            {stats.response2.data[0] !== undefined
               ? stats.response2.data[0].turnover
               : "N/A"}
           </p>

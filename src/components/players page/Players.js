@@ -108,7 +108,8 @@ const Players = ({
         </Grid>
       )}
       {/* Row 1 */}
-      {players.players.data !== undefined &&
+      {!players.loading &&
+        players.players.data !== undefined &&
         players.players.data.length > 0 &&
         players.players.data
           .slice(0, 4)
@@ -121,7 +122,8 @@ const Players = ({
             />
           ))}
       {/* Row 2 */}
-      {players.players.data !== undefined &&
+      {!players.loading &&
+        players.players.data !== undefined &&
         players.players.data.length > 0 &&
         players.players.data
           .slice(4, 8)
@@ -134,7 +136,8 @@ const Players = ({
             />
           ))}
       {/* Row 3 */}
-      {players.players.data !== undefined &&
+      {!players.loading &&
+        players.players.data !== undefined &&
         players.players.data.length > 0 &&
         players.players.data
           .slice(8, 12)
@@ -147,7 +150,8 @@ const Players = ({
             />
           ))}
       {/* Row 4 */}
-      {players.players.data !== undefined &&
+      {!players.loading &&
+        players.players.data !== undefined &&
         players.players.data.length > 0 &&
         players.players.data
           .slice(12, 16)
@@ -160,7 +164,8 @@ const Players = ({
             />
           ))}
       {/* Row 5 */}
-      {players.players.data !== undefined &&
+      {!players.loading &&
+        players.players.data !== undefined &&
         players.players.data.length > 0 &&
         players.players.data
           .slice(16, 20)
@@ -173,7 +178,8 @@ const Players = ({
             />
           ))}
       {/* Row 6 */}
-      {players.players.data !== undefined &&
+      {!players.loading &&
+        players.players.data !== undefined &&
         players.players.data.length > 0 &&
         players.players.data
           .slice(20, 24)
@@ -186,7 +192,8 @@ const Players = ({
             />
           ))}
       {/* Row 7 */}
-      {players.players.data !== undefined &&
+      {!players.loading &&
+        players.players.data !== undefined &&
         players.players.data.length > 0 &&
         players.players.data
           .slice(24, 25)
@@ -198,7 +205,8 @@ const Players = ({
               players={players}
             />
           ))}
-      {players.players.data !== undefined &&
+      {!players.loading &&
+        players.players.data !== undefined &&
         players.players.meta !== undefined &&
         players.players.data.length > 0 && (
           <Grid xs={24} md={24} lg={24} style={{ margin: "0 1.5%" }}>
