@@ -7,4 +7,7 @@ Website for basketball fans to find information about basketball teams, players 
 The website has been hosted on Netlify and can be found here - https://basket-ball-stats.netlify.app/
 
 ### Screenshots
-![Alt text](https://i.ibb.co/tpzFB8M/Basketball-Stats.png "Home Page")
+
+Home Page
+
+![Alt text](https://i.ibb.co/tpzFB8M/Basketball-Stats.png)
